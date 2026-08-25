@@ -29,7 +29,7 @@
 # MAGIC USE CATALOG dbacademy;
 # MAGIC USE SCHEMA get_started_de;
 # MAGIC
-# MAGIC SELECT * FROM employees;
+# MAGIC SELECT * FROM new_employees;
 
 # COMMAND ----------
 
@@ -46,7 +46,7 @@
 
 # MAGIC %sql
 # MAGIC -- TODO: Insert Priya into the new_employees table
-# MAGIC INSERT INTO employees (ID, FirstName, Country, Role) VALUES
+# MAGIC INSERT INTO new_employees (ID, FirstName, Country, Role) VALUES
 # MAGIC   (7, 'Priya', 'India', 'Data Engineer');
 
 # COMMAND ----------
@@ -67,7 +67,7 @@
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC SELECT * FROM employees;
+# MAGIC SELECT * FROM new_employees;
 
 # COMMAND ----------
 
@@ -80,7 +80,7 @@
 
 # MAGIC %sql
 # MAGIC -- TODO: Update Aiden's role to Senior Data Analyst
-# MAGIC UPDATE employees
+# MAGIC UPDATE new_employees
 # MAGIC SET Role = 'Senior Data Analyst'
 # MAGIC WHERE FirstName = 'Aiden';
 
@@ -104,7 +104,7 @@
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC SELECT * FROM employees WHERE FirstName = 'Aiden';
+# MAGIC SELECT * FROM new_employees WHERE FirstName = 'Aiden';
 
 # COMMAND ----------
 
@@ -117,7 +117,7 @@
 
 # MAGIC %sql
 # MAGIC -- TODO: Delete Priya from the new_employees table
-# MAGIC DELETE FROM employees
+# MAGIC DELETE FROM new_employees
 # MAGIC WHERE FirstName = 'Priya';
 
 # COMMAND ----------
@@ -139,7 +139,7 @@
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC SELECT * FROM employees;
+# MAGIC SELECT * FROM new_employees;
 
 # COMMAND ----------
 
@@ -152,7 +152,7 @@
 
 # MAGIC %sql
 # MAGIC -- TODO: Show the version history of new_employees
-# MAGIC DESCRIBE HISTORY employees;
+# MAGIC DESCRIBE HISTORY new_employees;
 
 # COMMAND ----------
 

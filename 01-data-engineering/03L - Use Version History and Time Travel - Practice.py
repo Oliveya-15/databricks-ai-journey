@@ -29,7 +29,7 @@
 # MAGIC USE CATALOG dbacademy;
 # MAGIC USE SCHEMA get_started_de;
 # MAGIC
-# MAGIC SELECT * FROM employees;
+# MAGIC SELECT * FROM new_employees;
 
 # COMMAND ----------
 
@@ -42,7 +42,7 @@
 
 # MAGIC %sql
 # MAGIC -- TODO: Show the version history of new_employees
-# MAGIC DESCRIBE HISTORY employees;
+# MAGIC DESCRIBE HISTORY new_employees;
 
 # COMMAND ----------
 
@@ -74,7 +74,7 @@
 
 # MAGIC %sql
 # MAGIC -- TODO: Query new_employees at version 0
-# MAGIC SELECT * FROM employees VERSION AS OF 1;
+# MAGIC SELECT * FROM new_employees VERSION AS OF 0;
 
 # COMMAND ----------
 
@@ -102,7 +102,7 @@
 
 # MAGIC %sql
 # MAGIC -- TODO: Query the version that has all 3 rows with original roles (after INSERT, before UPDATE)
-# MAGIC SELECT * FROM employees VERSION AS OF 0;
+# MAGIC SELECT * FROM new_employees VERSION AS OF 1;
 
 # COMMAND ----------
 
@@ -133,7 +133,7 @@
 # MAGIC -- TODO: Compare row counts between current and version 0
 # MAGIC SELECT 'Current' AS version, COUNT(*) AS row_count FROM employees
 # MAGIC UNION ALL
-# MAGIC SELECT 'Version 0', COUNT(*) FROM employees VERSION AS OF 0;
+# MAGIC SELECT 'Version 0', COUNT(*) FROM new_employees VERSION AS OF 0;
 
 # COMMAND ----------
 
@@ -163,7 +163,7 @@
 
 # MAGIC %sql
 # MAGIC -- TODO: Query version 0 using the @v shorthand
-# MAGIC SELECT * FROM employees@v0;
+# MAGIC SELECT * FROM new_employees@v0;
 
 # COMMAND ----------
 

@@ -68,7 +68,7 @@
 
 # MAGIC %sql
 # MAGIC -- TODO: Preview the contents of employees2.csv
-# MAGIC SELECT * FROM read_files('/Volumes/dbacademy/get_started_de/myfiles/employees.csv');
+# MAGIC SELECT * FROM read_files('/Volumes/dbacademy/get_started_de/myfiles/employees2.csv');
 
 # COMMAND ----------
 
@@ -96,8 +96,8 @@
 
 # MAGIC %sql
 # MAGIC -- TODO: Create a new Delta table called new_employees from employees2.csv
-# MAGIC CREATE TABLE IF NOT EXISTS employees
-# MAGIC AS SELECT * FROM read_files('/Volumes/dbacademy/get_started_de/myfiles/employees.csv');
+# MAGIC CREATE TABLE IF NOT EXISTS new_employees
+# MAGIC AS SELECT * FROM read_files('/Volumes/dbacademy/get_started_de/myfiles/employees2.csv');
 
 # COMMAND ----------
 
@@ -122,7 +122,7 @@
 
 # MAGIC %sql
 # MAGIC -- TODO: Query the new_employees table
-# MAGIC SELECT * FROM employees;
+# MAGIC SELECT * FROM new_employees;
 
 # COMMAND ----------
 
