@@ -1,4 +1,8 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "5"
+# ///
 # MAGIC %md-sandbox
 # MAGIC
 # MAGIC <div style="max-width: 1000px; margin: 0 auto; font-family: sans-serif;">
@@ -13,7 +17,7 @@
 
 # COMMAND ----------
 
-
+# MAGIC
 # MAGIC %md
 # MAGIC **Where we left off:** In Lessons 1 and 2, we created and modified the `employees` table with INSERT, UPDATE, and DELETE. Each operation created a new version. Let's start by looking at the current state of the table.
 
