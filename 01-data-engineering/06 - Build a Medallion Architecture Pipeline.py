@@ -1,4 +1,8 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "5"
+# ///
 # MAGIC %md-sandbox
 # MAGIC
 # MAGIC <div style="max-width: 1000px; margin: 0 auto; font-family: sans-serif;">
@@ -13,7 +17,7 @@
 
 # COMMAND ----------
 
-
+# MAGIC
 # MAGIC %md
 # MAGIC **In this lesson:** You'll organize the process of getting data into tables into a production pattern.
 

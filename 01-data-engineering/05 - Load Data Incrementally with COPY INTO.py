@@ -1,4 +1,8 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "5"
+# ///
 # MAGIC %md-sandbox
 # MAGIC
 # MAGIC <div style="max-width: 1000px; margin: 0 auto; font-family: sans-serif;">
@@ -13,7 +17,7 @@
 
 # COMMAND ----------
 
-
+# MAGIC
 # MAGIC %md
 # MAGIC **Where we left off:** You created tables with CTAS (code-driven, one-time) and the Upload UI (manual, one-time). Now you'll learn the method used for repeatable, incremental pipelines.
 
