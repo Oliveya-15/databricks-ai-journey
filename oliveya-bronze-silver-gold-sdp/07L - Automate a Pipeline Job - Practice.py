@@ -36,9 +36,9 @@
 # MAGIC USE CATALOG dbacademy;
 # MAGIC USE SCHEMA get_started_de;
 # MAGIC
-# MAGIC SELECT 'Manual (Lesson 6)' AS source, COUNT(*) AS rows FROM current_employees_bronze
+# MAGIC SELECT 'Manual Gold' AS source, Country, TotalEmployees FROM country_count_gold
 # MAGIC UNION ALL
-# MAGIC SELECT 'Job (Lesson 7)', COUNT(*) FROM current_employees_bronze_job;
+# MAGIC SELECT 'Job Gold', Role AS Country, TotalEmployees FROM total_roles_gold_job;
 
 # COMMAND ----------
 

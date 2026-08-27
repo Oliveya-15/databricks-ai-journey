@@ -1,5 +1,4 @@
 # Databricks notebook source
-
 # MAGIC %md-sandbox
 # MAGIC
 # MAGIC <div style="max-width: 1000px; margin: 0 auto; font-family: sans-serif;">
@@ -186,15 +185,15 @@
 # COMMAND ----------
 
 # MAGIC %sql
-CREATE OR REFRESH STREAMING TABLE current_employees_bronze_sdp
-COMMENT "Raw employee data ingested from CSV files in the myfiles volume."
-AS SELECT *
-FROM STREAM read_files(
-  '/Volumes/dbacademy/get_started_de/myfiles/',
-  format => 'csv',
-  header => true,
-  inferSchema => true
-);
+# MAGIC CREATE OR REFRESH STREAMING TABLE current_employees_bronze_sdp
+# MAGIC COMMENT "Raw employee data ingested from CSV files in the myfiles volume."
+# MAGIC AS SELECT *
+# MAGIC FROM STREAM read_files(
+# MAGIC   '/Volumes/dbacademy/get_started_de/myfiles/',
+# MAGIC   format => 'csv',
+# MAGIC   header => true,
+# MAGIC   inferSchema => true
+# MAGIC );
 
 # COMMAND ----------
 
@@ -211,19 +210,19 @@ FROM STREAM read_files(
 # COMMAND ----------
 
 # MAGIC %sql
-CREATE OR REFRESH MATERIALIZED VIEW current_employees_silver_sdp(
-  CONSTRAINT valid_id EXPECT (ID IS NOT NULL),
-  CONSTRAINT valid_name EXPECT (FirstName IS NOT NULL)
-)
-COMMENT "Cleaned and enriched employee data with data quality expectations."
-AS SELECT
-  ID,
-  FirstName,
-  Country,
-  UPPER(Role) AS Role,
-  current_timestamp() AS processed_timestamp,
-  current_date() AS processed_date
-FROM current_employees_bronze_sdp;
+# MAGIC CREATE OR REFRESH MATERIALIZED VIEW current_employees_silver_sdp(
+# MAGIC   CONSTRAINT valid_id EXPECT (ID IS NOT NULL),
+# MAGIC   CONSTRAINT valid_name EXPECT (FirstName IS NOT NULL)
+# MAGIC )
+# MAGIC COMMENT "Cleaned and enriched employee data with data quality expectations."
+# MAGIC AS SELECT
+# MAGIC   ID,
+# MAGIC   FirstName,
+# MAGIC   Country,
+# MAGIC   UPPER(Role) AS Role,
+# MAGIC   current_timestamp() AS processed_timestamp,
+# MAGIC   current_date() AS processed_date
+# MAGIC FROM current_employees_bronze_sdp;
 
 # COMMAND ----------
 
@@ -236,13 +235,13 @@ FROM current_employees_bronze_sdp;
 # COMMAND ----------
 
 # MAGIC %sql
-CREATE OR REFRESH MATERIALIZED VIEW total_roles_gold_sdp
-COMMENT "Employee count by role — business-ready aggregation."
-AS SELECT
-  Role,
-  COUNT(*) AS TotalEmployees
-FROM current_employees_silver_sdp
-GROUP BY Role;
+# MAGIC CREATE OR REFRESH MATERIALIZED VIEW total_roles_gold_sdp
+# MAGIC COMMENT "Employee count by role — business-ready aggregation."
+# MAGIC AS SELECT
+# MAGIC   Role,
+# MAGIC   COUNT(*) AS TotalEmployees
+# MAGIC FROM current_employees_silver_sdp
+# MAGIC GROUP BY Role;
 
 # COMMAND ----------
 
